@@ -1,109 +1,75 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import fire from "../Images/fire.png";
 import { sampleData } from "../Components/Data";
-import hotSaleImage from "../Images/hotsale.png";
 
-const useStyles = makeStyles(() => ({
-  container: {
-    fontFamily: "Manrope, sans-serif",
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "16px",
-    padding: "16px",
-    backgroundColor: "#f0f0f0",
-    borderRadius: "0 0 16px 16px",
-    marginTop: "-1rem",
-    marginRight: "1rem",
-    marginLeft: "1rem",
-  },
-  box: {
-    width: "100%",
-    height: "150px",
-    borderRadius: "8px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "16px",
-    color: "black",
-    fontSize: "1rem",
-    backgroundColor: "#FFFFFF",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  },
-  lightRedBox: {
-    width: "45rem",
-    height: "5rem",
-    borderRadius: "10px",
-    backgroundColor: "#f5a0a8",
-  },
-  lightOrangeBox: {
-    width: "45rem",
-    height: "5rem",
-    borderRadius: "10px",
-    backgroundColor: "#FFCC99",
-  },
-  leftColumn: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-  },
-  rightColumn: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-end",
-  },
-//   image: {
-//     width: "30px",
-//     height: "30px",
-//     marginBottom: "8px",
-//   },
-  hotSaleImage: {
-    position: "absolute",
-    top: "8px",
-    right: "8px",
-    width: "20px",
-    height: "20px",
-  },
-  text: {
-    color:'#f6303e',
-    marginBottom: "8px",
-  },
-}));
-
-function Box() {
-  const classes = useStyles();
+const Box = () => {
+  // Define the function to determine the background color based on the data
+  const getBackgroundColor = (item) => {
+    if (item.issue === "Leak" && item.property === "Property Name") {
+      return "#FFCC99"; // Light orange color
+    }
+    return "pink"; // Default color for other data
+  };
 
   return (
-    <div className={classes.container}>
-      {sampleData.map((item, index) => {
-        const boxClass =
-          index % 2 === 0 ? classes.lightRedBox : classes.lightOrangeBox;
-
-        return (
-          <div key={index} className={`${classes.box} ${boxClass}`}>
-            <img src={hotSaleImage} alt="" 
-            style={{height:'30px',width:'30px',marginBottom: '60px'}}
-            />
-
-            <div className={classes.leftColumn}>
-              <img src={item.image} alt="" className={classes.image} />
-              <div className={classes.text}>
-                {item.issue} {item.property}
+    <>
+      <div
+        id="container"
+        className="grid grid-cols-2 gap-4 rounded-b-lg"
+        style={{
+            fontFamily: 'Manrope, sans-serif',
+            backgroundColor: 'rgb(240, 240, 240)',
+            height: '215px',
+            padding: '1rem'
+        }}
+      >
+        {sampleData.map((item, index) => (
+          <div
+            key={index}
+            className="w-[100%] h-[5.4rem] border-[1px] border-[red] rounded-lg p-2"
+            style={{
+              backgroundColor: getBackgroundColor(item), // Apply the background color
+            }}
+          >
+            <div className="flex flex-row items-center justify-between">
+              <div
+                id="1"
+                className="flex flex-row items-center text-red-600 gap-1 order-1"
+              >
+                <img src={fire} alt="fire" className="w-6 h-6 m-2" />
+                <div>{item.issue}</div>
+                <div>{item.property}</div>
               </div>
-              <div className={classes.text}>
-                {item.building} {item.status}
+              <div id="alertButtons" className="order-2 gap-1 flex m-1">
+                <button className="font-thin bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-white-300 rounded w-[65px] h-[30px] justify-center items-center flex">
+                  {item.taskDate}
+                </button>
+                <button className="font-thin bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-white-300 rounded h-[30px] flex justify-center items-center">
+                  {item.noOfTasks}
+                </button>
               </div>
             </div>
-
-            <div className={classes.rightColumn}>
-              <div className={classes.text}>{item.taskDate}</div>
-              <div className={classes.text}>{item.noOfTasks}</div>
-              <div>{item.date}</div>
+            <div className="flex justify-between">
+              <div className="flex flex-row order-1">
+                <div id="building" className="text-red-700 ml-2">
+                  {item.building}
+                </div>
+                <div className="border-dotted border-2 border-red-400 bg-neutral-100 w-[5rem] border-red-500 ml-2 rounded items-center justify-center flex text-red-600">
+                  {item.status}
+                </div>
+              </div>
+              <div className="order-2 flex flex-row mr-2 items-center gap-2 text-sm text-black-100">
+                <div id="date">{item.date},</div>
+                <div id="time" className="font-hairline text-xs text-gray-700">
+                  9:00 pm
+                </div>
+              </div>
             </div>
           </div>
-        );
-      })}
-    </div>
+        ))}
+      </div>
+    </>
   );
-}
+};
 
 export default Box;

@@ -4,44 +4,45 @@ export const sampleData=
         "image": "link",
         "issue":"Fire 911",
         "property":"Property Name",
-        "status":"occupied",
+        "status":"OCCUPIED",
         "taskDate":"New",
         "building":"Buidling 12 - Unit 21",
         "noOfTasks":"3 Tasks",
-        "date":"26th march"
+        "date":"26 March, 09:00PM"
 
     },
     {
         "image": "link",
-        "issue":"Fire",
-        "property":"bunglow",
-        "building":"buidling 12 unit 21",
-        "status":"occupied",
-        "taskDate":"New",
+        "issue":"Leak",
+        "property":"Property Name",
+        "building":"Buidling 12- Unit 21",
+        "status":"OCCUPIED",
+        "taskDate":"IN PROGRESS",
         "noOfTasks":"3 Tasks",
-        "date":"26th march"
+        "date":"26 March, 09:00PM"
+        
 
     },
     {
         "image": "link",
-        "issue":"Fire",
-        "property":"bunglow",
-        "building":"buidling 12 unit 21",
-        "status":"occupied",
+        "issue":"Fire 911",
+        "property":"Property Name",
+        "status":"VACANT",
         "taskDate":"New",
+        "building":"Buidling 12 - Unit 21",
         "noOfTasks":"3 Tasks",
-        "date":"26th march"
+        "date":"26 March, 09:00PM"
 
     },
     {
         "image": "link",
-        "issue":"Fire",
-        "property":"bunglow",
-        "building":"buidling 12 unit 21",
-        "status":"occupied",
-        "taskDate":"New",
+        "issue":"Leak",
+        "property":"Property Name",
+        "building":"Buidling 12- Unit 21",
+        "status":"VACANT",
+        "taskDate":"LATE",
         "noOfTasks":"3 Tasks",
-        "date":"26th march"
+        "date":"26 March, 09:00PM"
 
     },
     // {

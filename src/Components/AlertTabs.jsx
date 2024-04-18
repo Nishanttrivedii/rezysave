@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
         padding: "0 16px",
         borderRadius: "0.7rem",
         color: "black",
+        marginTop: '17px'
     },
     tab: {
         display: "flex",
@@ -23,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
         padding: "16px",
         cursor: "pointer",
         transition: "background-color 0.3s",
-        width: "200px",
-        height: "60px",
+        width: "260px",
+        height: "88px",
         marginTop: "2rem",
         borderTopLeftRadius: "0.5rem",
         borderTopRightRadius: "0.5rem",
@@ -47,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     },
     verticalLine: {
         width: "2px",
-        height: "66%",
+        height: "71%",
         marginTop: "-5.3rem",
         marginLeft: "-1px",
         backgroundColor: "black",
