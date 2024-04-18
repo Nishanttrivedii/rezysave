@@ -1,15 +1,15 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import AlertSummary from "./AlertSummary";
 import Security from "./components/Security";
-
+import NewComponent from "./components/NewComponent";
 
 function App() {
   return (
     <>
       <div id="container">
+      
         <Navbar />
-        <AlertSummary />
+        <NewComponent />
         <Security />
         
       
