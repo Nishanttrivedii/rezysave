@@ -34,7 +34,6 @@ function AlertSummary() {
   return (
     <AppBar position="static" className={classes.appBar}>
       <Toolbar className={classes.toolbar}>
-        {/* Alert Summary heading with icon */}
         <div className={classes.heading}>
           <Notifications style={{ marginRight: theme.spacing(1) }} />
           <Typography variant="h6">

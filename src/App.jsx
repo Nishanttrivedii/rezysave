@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
-import AlertSummary from './Components/AlertSummary';
-import AlertTabs from './Components/AlertTabs';
-import Filtering from './Components/Filtering';
+import React, { useState } from "react";
+import AlertSummary from "./Components/AlertSummary";
+import AlertTabs from "./Components/AlertTabs";
+import FilteringNav from "./Components/FilteringNav";
+import Box from './Components/Box'
 
 function App() {
-  const [value, setValue] = useState(0);
+  const [selectedTab, setSelectedTab] = useState("All");
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleTabChange = (event, index) => {
+    const tabNames = ["Today", "All", "New", "Flagged", "InProgress", "Last"];
+
+    setSelectedTab(tabNames[index]);
   };
 
   return (
     <>
-      <div >
+      <div>
         <AlertSummary />
-        <AlertTabs value={value} handleChange={handleChange} />
-        <Filtering/>
+        <AlertTabs value={selectedTab} handleChange={handleTabChange} />
+        <FilteringNav selectedTab={selectedTab} />
+        <Box/>
       </div>
     </>
   );
