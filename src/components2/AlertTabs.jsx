@@ -6,10 +6,9 @@ import ultraImage from ".././assets/Images/ultra.png";
 import okImage from ".././assets/Images/OK.jpeg";
 import smaImage from ".././assets/Images//sma.webp";
 import lastImage from ".././assets/Images/last.png";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     container: {
         display: "flex",
         justifyContent: "space-between",
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         padding: "16px",
         cursor: "pointer",
-        transition: "background-color 0.3s",
+        transition: "background-color 0.3s, color 0.3s", // Add transition for smooth changes
         width: "260px",
         height: "88px",
         marginTop: "2rem",
@@ -32,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         borderTopRightRadius: "0.5rem",
     },
     activeTab: {
-        backgroundColor: "#f0f0f0",
+        backgroundColor: "#F0F0F0",
     },
     icon: {
         fontSize: "2rem",
@@ -40,12 +39,14 @@ const useStyles = makeStyles((theme) => ({
     label: {
         fontSize: "0.9rem",
         marginLeft: "8px",
+        transition: "color 0.3s", // Add transition for color changes
     },
     count: {
         fontSize: "0.9rem",
         marginLeft: "8px",
         color: "blue",
         fontWeight: "bold",
+        transition: "color 0.3s", // Add transition for color changes
     },
     verticalLine: {
         width: "2px",
@@ -53,12 +54,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "-5.3rem",
         marginLeft: "-1px",
         backgroundColor: "black",
+        transition: "background-color 0.3s", // Add transition for background color changes
     },
 }));
-
 function AlertTabs({ value, handleChange }) {
     const classes = useStyles();
-
     const tabs = [
         {
             icon: null,
@@ -97,51 +97,48 @@ function AlertTabs({ value, handleChange }) {
             count: "07",
         },
     ];
-
     const lineIndices = [1, 2, 3, 4, 5];
-
     return (
         <div className={classes.container}>
-      {tabs.map((tab, index) => (
-        <div key={index} style={{ position: "relative" }}>
-          <div
-            className={`${classes.tab} ${
-              value === tab.label ? classes.activeTab : ""
-            }`}
-            onClick={() => handleChange(null, index)}
-          >
-            
-           
-              <img
-                src={tab.image}
-                alt={tab.label}
-                style={{ width: "3rem", height: "3rem" }}
-              />
-           
-            <div>
-              <span className={classes.label}>{tab.label}</span>
-              {tab.count > 0 && (
-                <h1
-                  style={{
-                    color: "blue",
-                    fontSize: "1.9rem",
-                    marginLeft: "1rem",
-                  }}
-                  className={classes.count}
-                >
-                  {tab.count}
-                </h1>
-              )}
-            </div>
-          </div>
-
-          {lineIndices.includes(index) && value !== tab.label && (
-            <div className={classes.verticalLine} />
-          )}
-        </div>
-      ))}
+            {tabs.map((tab, index) => (
+                <div key={index} style={{ position: "relative" }}>
+                    <div
+                        className={`${classes.tab} ${
+                            value === tab.label ? classes.activeTab : ""
+                        }`}
+                        onClick={() => handleChange(null, index)}
+                    >
+                        {tab.icon ? (
+                            <FontAwesomeIcon icon={tab.icon} className={classes.icon} />
+                        ) : (
+                            <img
+                                src={tab.image}
+                                alt={tab.label}
+                                style={{ width: "3rem", height: "3rem" }}
+                            />
+                        )}
+                        <div>
+                            <span className={classes.label}>{tab.label}</span>
+                            {tab.count > 0 && (
+                                <h1
+                                    style={{
+                                        color: "blue",
+                                        fontSize: "1.9rem",
+                                        marginLeft: "1rem",
+                                    }}
+                                    className={classes.count}
+                                >
+                                    {tab.count}
+                                </h1>
+                            )}
+                        </div>
+                    </div>
+                    {lineIndices.includes(index) && value !== tab.label && (
+                        <div className={classes.verticalLine} />
+                    )}
+                </div>
+            ))}
         </div>
     );
 }
-
 export default AlertTabs;
