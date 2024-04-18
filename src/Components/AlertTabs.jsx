@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-
 import iwinboxImage from "../Images/iwinbox.jpeg";
 import outlineImage from "../Images/outline.png";
 import ultraImage from "../Images/ultra.png";
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         padding: "16px",
         cursor: "pointer",
-        transition: "background-color 0.3s",
+        transition: "background-color 0.3s, color 0.3s", // Add transition for smooth changes
         width: "260px",
         height: "88px",
         marginTop: "2rem",
@@ -39,12 +38,14 @@ const useStyles = makeStyles((theme) => ({
     label: {
         fontSize: "0.9rem",
         marginLeft: "8px",
+        transition: "color 0.3s", // Add transition for color changes
     },
     count: {
         fontSize: "0.9rem",
         marginLeft: "8px",
         color: "blue",
         fontWeight: "bold",
+        transition: "color 0.3s", // Add transition for color changes
     },
     verticalLine: {
         width: "2px",
@@ -52,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "-5.3rem",
         marginLeft: "-1px",
         backgroundColor: "black",
+        transition: "background-color 0.3s", // Add transition for background color changes
     },
 }));
 
