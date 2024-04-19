@@ -16,7 +16,7 @@ function NewComponent() {
   };
   return (
     <>
-      <div>
+      <div id="component2container" className="mb-6" style={{backgroundColor:'white'}}>
         <AlertSummary />
         {/* Pass the selectedTab and handleTabChange props to AlertTabs */}
         <AlertTabs value={selectedTab} handleChange={handleTabChange} />

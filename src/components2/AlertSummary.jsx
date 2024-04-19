@@ -1,15 +1,14 @@
-import React from 'react';
-import { Typography, IconButton, Button, AppBar, Toolbar } from '@material-ui/core';
+import { Typography, Button, AppBar, Toolbar } from '@material-ui/core';
 import { Notifications, Sort } from '@material-ui/icons';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   appBar: {
     marginTop:'1rem',
     backgroundColor: 'darkblue',
     borderRadius: '0.7rem',
-    marginLeft:'1rem',
-    width:'97rem'
+   
+   
   },
   toolbar: { 
     display: 'flex',

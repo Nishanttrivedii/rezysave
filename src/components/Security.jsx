@@ -36,8 +36,8 @@ const Security = () => {
           </div>
         </AccordionSummary>
         <AccordionDetails>
-          <div id="mainContainer" className="flex flex-row gap-2">
-            <div id="footageContainer" className="w-[50%]">
+        <div id="mainContainer" className="flex lg:flex-row flex-col gap-2">
+            <div id="footageContainer" className="md:w-[100%] lg:w-[50%] sm:w-[100%]">
               <div
                 id="navbar"
                 className="w-[100%] h-[3rem] bg-blue rounded-lg  flex items-center"
@@ -78,7 +78,7 @@ const Security = () => {
             </div>
             <div
               style={{ backgroundColor: "#F0F0F0", borderRadius: "8px" }}
-              className="  w-[50%]"
+              className=" md:w-[100%] lg:w-[50%] sm:w-[100%]"
               id="alertsContainer"
             >
               <div

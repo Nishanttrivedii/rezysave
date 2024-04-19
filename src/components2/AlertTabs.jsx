@@ -99,7 +99,7 @@ function AlertTabs({ value, handleChange }) {
     ];
     const lineIndices = [1, 2, 3, 4, 5];
     return (
-        <div className={classes.container}>
+        <div className={classes.container} style={{width:'100%',overflowY:'scroll'}}>
             {tabs.map((tab, index) => (
                 <div key={index} style={{ position: "relative" }}>
                     <div

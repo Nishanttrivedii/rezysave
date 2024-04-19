@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import  { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Button } from "@material-ui/core";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   filteringContainer: {
     backgroundColor: "#f0f0f0",
-    padding: "16px",
-    marginLeft: '1rem',
-    marginRight: '1rem'
+    padding: "16px"
   },
   navbar: {
     display: "flex",

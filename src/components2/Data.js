@@ -8,7 +8,7 @@ export const sampleData=
         "taskDate":"New",
         "building":"Buidling 12 - Unit 21",
         "noOfTasks":"3 Tasks",
-        "date":"26 March, 09:00PM"
+        "date":"26 March"
 
     },
     {
@@ -19,7 +19,7 @@ export const sampleData=
         "status":"OCCUPIED",
         "taskDate":"IN PROGRESS",
         "noOfTasks":"3 Tasks",
-        "date":"26 March, 09:00PM"
+        "date":"26 March"
         
 
     },
@@ -31,7 +31,7 @@ export const sampleData=
         "taskDate":"New",
         "building":"Buidling 12 - Unit 21",
         "noOfTasks":"3 Tasks",
-        "date":"26 March, 09:00PM"
+        "date":"26 March"
 
     },
     {
@@ -42,7 +42,7 @@ export const sampleData=
         "status":"VACANT",
         "taskDate":"LATE",
         "noOfTasks":"3 Tasks",
-        "date":"26 March, 09:00PM"
+        "date":"26 March"
 
     },
     // {

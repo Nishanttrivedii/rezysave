@@ -36,11 +36,12 @@ const Box = ({ selectedTab, sampleData }) => {
   return (
     <div
       id="container"
-      className="grid grid-cols-2 gap-4 rounded-b-lg"
-      style={{
+      className="grid lg:grid-cols-2 grid-flow-row gap-4 sm:grids-cols-1"   
+         style={{
         fontFamily: 'Manrope, sans-serif',
         backgroundColor: 'rgb(240, 240, 240)',
-        height: '215px',
+        height: 'auto',
+        minHeight:'215px',
         padding: '1rem',
         transition: 'all 0.3s ease-in-out'
       }}
@@ -48,7 +49,7 @@ const Box = ({ selectedTab, sampleData }) => {
       {sampleData.map((item, index) => (
         <div
           key={index}
-          className="w-[100%] h-[5.4rem] border-[1px] border-[red] rounded-lg p-2"
+          className="w-[100%] sm:h-auto md:h-[100px] border-[1px] border-[red] rounded-lg p-2"
           style={{
             backgroundColor: getBackgroundColor(item),
             transition: 'all 0.3s ease-in-out'
@@ -84,7 +85,7 @@ const Box = ({ selectedTab, sampleData }) => {
               </div>
             </div>
             <div className="order-2 flex flex-row mr-2 items-center gap-2 text-sm text-black-100">
-              <div id="date">{item.date},</div>
+              <div id="date">{item.date}</div>
               <div id="time" className="font-hairline text-xs text-gray-700">
                 9:00 pm
               </div>
